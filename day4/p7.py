@@ -15,8 +15,9 @@ class Student:
     @from_branch.deleter
     def from_branch(self):
         self.branch = None
-s1 = Student("My","Friend",111)
-s1.from_branch = "CSM"
+s1 = Student("My","CSM",111)
+print(s1.from_branch)
+s1.from_branch = "CSit"
 print(s1.from_branch)
 del s1.from_branch
 print(s1.from_branch)
