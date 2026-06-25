@@ -1,0 +1,18 @@
+import pandas as pd
+csv_path = "/workspaces/ACE-bootcamp0626/day7/archive/used_car_price_prediction_1M.csv"
+df = pd.read_csv(csv_path)
+print(df.head(10))
+print(df.tail(10))
+df.info()
+print(df.iloc[1:4])
+print(df.iloc[[1, 2, 3], [0]])
+print(df.iloc[2:5, [0, 1, 2]])
+print(df.iloc[2:5, [0, 9, 1, 2, 5]])
+print(df['City'].head())
+print(df.loc[:, 'City'].head())
+df.set_index('City', inplace=True)
+print(df.head())
+print(df.index[:10])
+print(df.loc[:,'Home Team Name'] == 1930)
+filt = (df['Home Team Name'] == 'India') | (df['Away Team Name'] == 'India')
+print(df.loc[filt])
